@@ -1,8 +1,8 @@
 import expressApp from "./app";
-import {RegisterApi} from './api/Register';
+import {AuthApi} from './api/auth';
 import { JwtApi } from './api/jwt';
 
-new RegisterApi(expressApp);
+new AuthApi(expressApp);
 new JwtApi(expressApp);
 
 

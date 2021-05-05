@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
-import { configure } from '../../common/config'
-import { UserJwt, JwtDataFormat, Jwt } from '../rest/jwt';
+import { configure } from '../common/config'
+import { UserJwt, JwtDataFormat, Jwt } from '../interfaces/jwt';
 
 export function makeJwt(data: JwtDataFormat) {
     return jwt.sign(data, configure.JWT_SECRET);

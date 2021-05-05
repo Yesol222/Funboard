@@ -1,7 +1,7 @@
 import {Express} from 'express-serve-static-core';
 import {Api} from ".";
-import {checkJwt} from '../app/jwt';
-import { checkJwt as Jwt } from '../app/jwt';
+import {checkJwt} from '../services/jwt';
+import { checkJwt as Jwt } from '../services/jwt';
 
 
 export class JwtApi extends Api{
