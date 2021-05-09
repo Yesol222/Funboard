@@ -2,8 +2,8 @@ import {Express} from 'express-serve-static-core'
 import {Api} from '.'
 import jwt from 'jsonwebtoken';
 import cors from 'cors';
-import { User } from "../interfaces/user";
-import SignUp  from "../services/auth";
+import { IUser } from "../interfaces/Iuser";
+import AuthService from '../services/auth';
 
 export class AuthApi extends Api{
 
@@ -13,7 +13,10 @@ export class AuthApi extends Api{
         setRoute() {
             (<any>this.router.post('/signup', async (req, res) => {
                 try {
-                    const { user, token } = await new SignUp(req.body as User);
+                    let user1 = req.body as IUser
+                    //instance 생성 후에 함수 호출
+                    const authService = new AuthService(user1);
+                    const { user, token } = await authService.SignUp(req.body as IUser);
                     return res.status(201).json({ user, token });
 
                 } catch (err) {

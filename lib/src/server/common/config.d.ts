@@ -12,6 +12,8 @@ export interface Configure {
     CHAINCODE_NAME: string;
     MSP_ID: string;
     CONNECTION_PATH: string;
+    MONGO_URI: string;
+    MONGO_PORT: number;
     DB_SERVER_HOST: string;
     DB_SERVER_PORT: number;
     DB_SERVER_USER: string;

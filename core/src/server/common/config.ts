@@ -19,6 +19,8 @@ export interface Configure {
 
     CONNECTION_PATH: string
 
+    MONGO_URI : string
+    MONGO_PORT : number
     DB_SERVER_HOST : string
     DB_SERVER_PORT : number
     DB_SERVER_USER : string
@@ -56,6 +58,8 @@ class ConstSingleton {
 
             CONNECTION_PATH: process.env.CONNECTION_PATH || '',
 
+            MONGO_URI : process.env.MONGO_URI || '',
+            MONGO_PORT : parseInt(process.env.PORT || '4000'),
             DB_SERVER_HOST : process.env.DB_SERVER_HOST || '',
             DB_SERVER_USER : process.env.DB_SERVER_USER || '',
             DB_SERVER_PORT : parseInt(process.env.PORT || '3306'),

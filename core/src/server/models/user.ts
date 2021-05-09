@@ -1,5 +1,5 @@
-import { User, UserDocument} from '../interfaces/User';
-import {findOneOrCreate} from "../services/db";
+import { IUser, UserDocument} from '../interfaces/Iuser';
+// import {findOneOrCreate} from "../services/db";
 import mongoose from 'mongoose';
 
 let UserModel;
@@ -31,7 +31,7 @@ export const UserSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-UserSchema.statics.findOneOrCreate = findOneOrCreate;
+// UserSchema.statics.findOneOrCreate = findOneOrCreate;
 
 // export interface UserDocument extends User, Document {
 //     setLastUpdated: (this: UserDocument) => Promise<void>;
@@ -39,4 +39,4 @@ UserSchema.statics.findOneOrCreate = findOneOrCreate;
 //   }
 
 
-export default UserModel = mongoose.model<User & UserDocument>('User', UserSchema);
+export default UserModel = mongoose.model<IUser & UserDocument>('User', UserSchema);

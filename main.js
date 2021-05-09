@@ -1,5 +1,5 @@
 const {app} = require('./lib/src/server');
-const {configure} = require('./lib/src/common/config');
+const {configure} = require('./lib/src/server/common/config');
 
 async function main(){
     app.listen(configure.PORT, () => {
